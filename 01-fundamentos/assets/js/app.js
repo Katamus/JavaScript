@@ -1,5 +1,5 @@
 // console.log(console.log('Hola mundo'));
-
+// console.log(miNombre + 'Jimenes');
 alert('Hola desde app.js');
 
 let a = 10, 
@@ -18,6 +18,4 @@ const saludo = c + d;
 c = 'Hola de nuevo';
 
 // console.table({a,b,c,d,x})
-var miNombre = 'Christian';
-
-
+let miNombre = 'Christian';
