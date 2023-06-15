@@ -30,10 +30,18 @@ const pedirCarta = () => {
     }
 
     carta = deck.pop();
-    console.log(deck);
-    console.log(carta);
     return carta;
 }
 
+const valorCarta = (carta) => {
+    let puntos = 0;
+    const valor = carta.substring(0,carta.length -1);
+    console.log(valor);
 
-// pedirCarta();
+    return isNaN(valor) ? 
+            (valor === 'A') ? 11 : 10
+            : valor * 1;
+
+}
+const valor = valorCarta(pedirCarta());
+console.log(valor);
