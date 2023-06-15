@@ -1,0 +1,2 @@
+https://mathiasbynens.be/notes/javascript-identifiers
+https://mothereff.in/js-variables
