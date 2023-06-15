@@ -1,2 +1,3 @@
 https://mathiasbynens.be/notes/javascript-identifiers
 https://mothereff.in/js-variables
+https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object
