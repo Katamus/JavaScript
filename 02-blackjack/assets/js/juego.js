@@ -1,12 +1,10 @@
 const miModulo = (() => {
 
-    'use strict'
+    'use strict';
 
     let deck = [];
     const tipos = ['C', 'D', 'H', 'D'],
         especiales = ['A', 'J', 'Q', 'K'];
-    // let puntosJugador = 0, 
-    //     puntosComputadora = 0;
 
     let puntosJugadores = [];
 
