@@ -18,7 +18,7 @@ const pedro = {
 
 fher.imprimir();
 
-
+// ok esto se debe de crear con un new
 function Persona(nombre,edad) {
     console.log('Se ejecuto esta linea');
     this.nombre = nombre;
