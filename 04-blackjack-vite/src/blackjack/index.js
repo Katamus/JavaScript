@@ -1,7 +1,5 @@
 // import { crearDeck as crearNuevoDeck } from './usecases/crear-deck';
-import  {crearDeck}  from './usecases/crear-deck';
-import  {pedirCarta} from "./usecases/pedir-carta";
-import  {valorCarta} from "./usecases/valor-carta";
+import { crearDeck,pedirCarta,valorCarta } from "./usecases";
 /**
  * 2C = Two of Clubs
  * 2D = Two of Diamonds
