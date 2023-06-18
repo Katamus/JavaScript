@@ -1,4 +1,5 @@
-import { crearDeck } from './usecases/crear-deck';
+// import { crearDeck as crearNuevoDeck } from './usecases/crear-deck';
+import  {crearDeck}  from './usecases/crear-deck';
 /**
  * 2C = Two of Clubs
  * 2D = Two of Diamonds
@@ -25,7 +26,7 @@ const puntosHTML = document.querySelectorAll('small');
 
 
 
-crearDeck();
+deck = crearDeck(tipos,especiales);
 
 
 // Esta función me permite tomar una carta
@@ -124,7 +125,7 @@ btnNuevo.addEventListener('click', () => {
 
     console.clear();
     deck = [];
-    deck = crearDeck();
+    deck = crearDeck(tipos,especiales);
 
     puntosJugador     = 0;
     puntosComputadora = 0;
