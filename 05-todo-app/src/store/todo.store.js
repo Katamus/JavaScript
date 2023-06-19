@@ -10,7 +10,8 @@ const state = {
     todos: [
         new Todo('Piedra del alma'),
         new Todo('Piedra del infinito'),
-        new Todo('Piedra del tiempo')
+        new Todo('Piedra del tiempo'),
+        new Todo('Piedra del realidad'),
     ],
     filter: Filter.All
 }
@@ -52,7 +53,12 @@ const addTodo = ( description ) => {
  * @param {String} todoId 
  */
 const toggleTodo = (todoId) => {
-    throw new Error('Not implemented');
+    state.todos = state.todos.map(todo =>{
+        if(todo.id === todoId){
+            todo.done = !todo.done;
+        }
+        return todo;
+    });
 }
 
 const deleteTodo = (todoId) => {
