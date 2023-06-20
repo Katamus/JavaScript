@@ -17,12 +17,21 @@ const state = {
 }
 
 const initStore = ()  => {
-    console.log(state);
+    loadStore();
     console.log('InitSore palma');
 }
 
 const loadStore = () =>{
-    throw new Error('Not implemented');
+
+    if(!localStorage.getItem('state')) return;
+
+    const{todos = [],filter = Filter.All} = JSON.parse(localStorage.getItem('state'));
+    state.todos = todos;
+    state.filter = filter;
+}
+
+const saveStateTodoLocalStorage = () => {
+    localStorage.setItem('state', JSON.stringify(state));
 }
 
 const getTodos = (filter = Filter.All) => {
@@ -46,6 +55,8 @@ const addTodo = ( description ) => {
     if(!description) throw new Error('Not implemented');
 
     state.todos.push(new Todo(description));
+
+    saveStateTodoLocalStorage();
 }
 
 /**
@@ -59,10 +70,15 @@ const toggleTodo = (todoId) => {
         }
         return todo;
     });
+
+    saveStateTodoLocalStorage();
+
 }
 
 const deleteTodo = (todoId) => {
     state.todos = state.todos.filter(todo => todo.id !== todoId)
+
+    saveStateTodoLocalStorage();
 }
 
 
@@ -76,6 +92,7 @@ const deleteCompleted = () => {
  */
 const setFilter = (newFilter = Filter.All) => {
     state.filter = newFilter;
+    saveStateTodoLocalStorage();
 }
 
 const getCurrentFilter = () => {
