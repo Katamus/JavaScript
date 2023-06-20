@@ -6,7 +6,17 @@ import { heroes } from "../data/heores"
  */
 export const promiseComponent = (element) => {
     
-    console.log('promiseComponent');
+    const renderHero = (hero)=>{
+        element.innerHTML = hero.name;
+    }
+
+    const renderError = (error)=>{
+        element.innerHTML = `<h1>Error:</h1><h3>${error}</h3>`;
+    }
+
+    const id1 = '5d86371f25a058e5b1c8a65e';
+
+    findHero(id1).then( renderHero).catch(error =>renderError(error));
     
 }
 
@@ -18,7 +28,7 @@ export const promiseComponent = (element) => {
 const findHero = (id) =>{
     
     return new Promise((resolve,reject)=>{
-        
+        console.log("Se ejecuta");
         const hero =heroes.find(hero  => hero.id === id);
 
         if(hero){
