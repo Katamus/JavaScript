@@ -7,13 +7,20 @@ import { heroes } from "../data/heores"
  */
 export const callbacksComponent = (element) => {
     
-    const id = '5d8637a1f2343e37870b91ef1';
-    findHero(id, (error,hero) => {
+    const id1 = '5d86371f2343e37870b91ef1';
+    const id2 = '5d86371f9f80b591f499df32';
+    findHero(id1, (error,hero1) => {
         if(!!error){
             element.innerHTML = error;
             return
         }
-        element.innerHTML = hero.name;
+        findHero(id2, (error,hero2) => {
+            if(!!error){
+                element.innerHTML = error;
+                return
+            }
+            element.innerHTML = `${hero1.name} / ${hero2.name}`;
+        });
     });
     
 }
