@@ -14,9 +14,23 @@ export const promiseComponent = (element) => {
         element.innerHTML = `<h1>Error:</h1><h3>${error}</h3>`;
     }
 
-    const id1 = '5d86371f25a058e5b1c8a65e';
+    const renderTowHeros = (hero1,hero2)=>{
+        element.innerHTML = `<h3>${hero1.name}</h3><h3>${hero2.name}</h3>`;
+    }
 
-    findHero(id1).then( renderHero).catch(error =>renderError(error));
+    const id1 = '5d86371f25a058e5b1c8a65e';
+    const id2 = '5d86371f9f80b591f499df32';
+
+   
+    findHero(id1)
+        .then( (hero1) => {
+            findHero(id2)
+                .then(hero2 =>{
+                  renderTowHeros(hero1,hero2);
+                })
+                .catch(renderError)
+        })
+        .catch(error =>renderError(error));
     
 }
 
