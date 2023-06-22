@@ -16,7 +16,7 @@ export const asynAwaitsComponent = async (element) => {
         element.innerHTML = `${hero1.name} / ${hero2.name}`;
     } catch (error) {
         console.log(error);
-        element.innerHTML = error
+        element.innerHTML = error;
     }
 
 
