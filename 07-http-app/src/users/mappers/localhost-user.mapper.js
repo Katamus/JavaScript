@@ -5,7 +5,6 @@ import { User } from "../models/user"
  * @returns {User}
  */
 export const localhostUserToModel = (localhostUser) =>{
-    console.log(localhostUser);
     const {
         id,
         isActive,
