@@ -7,4 +7,6 @@ import usersStrore from "./store/users-store";
 export const UsersApp = async(element)=>{
     element.innerHTML = 'Loading...';
     await usersStrore.loadNextPage()
+
+    console.log(usersStrore.getCurrentPage(),usersStrore.getUser());
 }
