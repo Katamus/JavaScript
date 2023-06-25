@@ -5,7 +5,7 @@ import { User } from "../models/user"
  * @returns {User}
  */
 export const localhostUserToModel = (localhostUser) =>{
-
+    console.log(localhostUser);
     const {
         id,
         isActive,
@@ -22,7 +22,7 @@ export const localhostUserToModel = (localhostUser) =>{
         balance,
         avatar,
         firstName: first_name,
-        firstName: last_name,
+        lastName: last_name,
         gender})
         ;
 }
