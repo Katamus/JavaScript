@@ -1,3 +1,4 @@
+import { renderButtons } from "./presentation/render-buttons/render-buttons";
 import { renderTable } from "./presentation/render-table/render-table";
 import usersStrore from "./store/users-store";
 
@@ -10,4 +11,5 @@ export const UsersApp = async(element)=>{
     await usersStrore.loadNextPage()
     element.innerHTML = '';
     renderTable(element);
+    renderButtons(element);
 }
