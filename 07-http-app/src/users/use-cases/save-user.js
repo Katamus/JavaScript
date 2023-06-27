@@ -1,3 +1,5 @@
+import { User } from "../models/user";
+
 /**
  * 
  * @param {like<User>} userLike 

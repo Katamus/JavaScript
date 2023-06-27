@@ -5,8 +5,9 @@ let modal, form;
 /**
  * 
  * @param {HTMLDivElement} element 
+ * @param {(userLike)=> Promise<void>} callback
  */
-export const renderModal = (element) => {
+export const renderModal = async (element, callback) => {
     if (modal) return;
 
     modal = document.createElement('div');
@@ -22,7 +23,7 @@ export const renderModal = (element) => {
 
     element.append(modal);
 
-    form.addEventListener('submit',(event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
         
         const formData = new FormData(form);
@@ -38,10 +39,14 @@ export const renderModal = (element) => {
             }
             userLike[key] = value;
         }
-        console.log(userLike);
+        // console.log(userLike);
 
+        await callback(userLike);
+        
+        hideModal();
+        
     });
-
+    
 }
 
 export const showModal = () =>{
