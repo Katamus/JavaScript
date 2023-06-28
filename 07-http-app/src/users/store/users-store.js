@@ -1,3 +1,5 @@
+import { User } from "../models/user";
+import { renderTable } from "../presentation/render-table/render-table";
 import { loadUser } from "../use-cases/load-users-by-page";
 
 const state = {
@@ -21,8 +23,27 @@ const loadPreviousPage = async()=>{
     state.users = user;
 }
 
-const onUserChanged = async()=>{
-    throw new Error('No implementado');
+/**
+ * 
+ * @param {updateUser} user 
+ */
+const onUserChanged = async(updateUser)=>{
+
+    let wasFound = false;
+
+    state.users = state.users.map(data => {
+        if(data.id === updateUser.id){
+            wasFound = true;
+            return  updateUser;
+        }else {
+            return data;
+        }
+    })
+
+    if(state.users.length < 10 && !wasFound) {
+        state.users.push(updateUser);
+    }
+    
 }
 
 const reloadPage = async()=>{
