@@ -47,7 +47,11 @@ const onUserChanged = async(updateUser)=>{
 }
 
 const reloadPage = async()=>{
-    throw new Error('No implementado');
+    const user = await loadUser(state.currentPage);
+    if(user.length === 0) {
+        await loadPreviousPage();
+    };
+    state.users = user;
 }
 
 
