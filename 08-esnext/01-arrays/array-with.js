@@ -1,4 +1,4 @@
-const superHeroes = [
+const state = [
     {
         id:1,
         name:'Batman'
@@ -9,15 +9,32 @@ const superHeroes = [
         id:3,
         name:'Flash'
     },{
-        id:1,
+        id:4,
         name:'Aquaman'
     }
 ];
 
-// const superHeroesCopy = [...superHeroes.map(h => ({...h}))]
-const superHeroesCopy = structuredClone(superHeroes);
+const index = 1;
+const newName = 'Green Lantern';
 
-superHeroesCopy[0].name = 'GreenLanter';
+// const newState = state.map((hero,i )=>{
 
-console.table(superHeroes);
-console.table(superHeroesCopy);
+//         if(i === index){
+//             hero.name = newName
+//         }
+
+//         return hero;
+
+// });
+
+const newState = structuredClone(state).with(index,{
+    ...state.at(index),
+    name:newName
+});
+
+
+state[0].name = 'Volcan Negro';
+
+console.table(newState);
+
+console.log('El ultimo: ', state.at(-1) );
